@@ -22,10 +22,10 @@ public class AddUserTest {
     public void addUserWorksOK() {
         RestTemplate template = new RestTemplate();
         User user = new User(3, "Funda Bayulu");
-        ResponseEntity<Void> resultSave = template.postForEntity("http://localhost:8080/basic/rest/users", user, Void.class);
+        ResponseEntity<Void> resultSave = template.postForEntity("http://localhost:8080/testing/rest/users", user, Void.class);
         assertNotNull(resultSave);
 
-        ResponseEntity<List> resultList = template.getForEntity("http://localhost:8080/basic/rest/users", List.class);
+        ResponseEntity<List> resultList = template.getForEntity("http://localhost:8080/testing/rest/users", List.class);
         assertNotNull(resultList);
         assertNotNull(resultList.getBody());
         assertThat(resultList.getBody().size(), is(3));

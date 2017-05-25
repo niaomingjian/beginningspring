@@ -20,7 +20,7 @@ public class ListUsersTest {
     @Test
     public void listUsersWorksOK() {
         RestTemplate template = new RestTemplate();
-        ResponseEntity<List> result = template.getForEntity("http://localhost:8080/basic/rest/users", List.class);
+        ResponseEntity<List> result = template.getForEntity("http://localhost:8080/testing/rest/users", List.class);
         assertNotNull(result);
         assertNotNull(result.getBody());
         assertThat(result.getBody().size(), is(2));

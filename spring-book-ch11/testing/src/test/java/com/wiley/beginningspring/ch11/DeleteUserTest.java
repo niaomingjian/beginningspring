@@ -20,9 +20,9 @@ public class DeleteUserTest {
     @Test
     public void deleteUserWorksOK() {
         RestTemplate template = new RestTemplate();
-        template.delete("http://localhost:8080/rest/users/3");
+        template.delete("http://localhost:8080/testing/rest/users/3");
 
-        ResponseEntity<List> resultList = template.getForEntity("http://localhost:8080/basic/rest/users", List.class);
+        ResponseEntity<List> resultList = template.getForEntity("http://localhost:8080/testing/rest/users", List.class);
         assertNotNull(resultList);
         assertNotNull(resultList.getBody());
         assertThat(resultList.getBody().size(), is(2));
